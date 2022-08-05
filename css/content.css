@@ -8,11 +8,16 @@
 
 
 /* 버튼 비활성화 일때 */
+ul {
+display : flex;
+margin-right : 10rem;
+}
+
 
 ul li {
   display: flex;
   color: gray;
-  width : 10rem;
+  width : 3rem;
 }
 
 /* 버튼 활성 */
@@ -20,6 +25,7 @@ ul li.on {
   display : flex;
   color: black;
   cursor: pointer;
+  
 }
 
 section {
