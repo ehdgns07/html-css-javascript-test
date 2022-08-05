@@ -19,11 +19,21 @@ const result = document.querySelector(".result");
 function operator(opr){
   
     if(oper === ''){
+        if(number === ''){
+            oper = '';
+            console.log("a");
+        }else{
         saveOperator(opr);
+    }
     }
 
     if(opr === '='){
-       calculate();
+        num2 = parseInt(number);
+        if(num2 === undefined){
+            console.log('a')
+        }else{
+       calculate(num2);
+    }
     }
 
     if(opr === 'C'){
@@ -32,15 +42,16 @@ function operator(opr){
 }
 
 function saveOperator(opr){
+    if(opr !== '='){
     oper = opr;
     result.value += oper;
     num1 = parseInt(number);
     number = '';
 }
+}
 
-function calculate(){
-
-    num2 = parseInt(number);
+function calculate(num2){
+    
     if(oper === '/'){
         result.value = num1 / num2;
         flag = false;
