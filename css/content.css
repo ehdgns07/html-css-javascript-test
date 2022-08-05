@@ -11,6 +11,7 @@
 ul {
 
 }
+
 ul li {
   display: flex;
   color: gray;
@@ -44,7 +45,6 @@ section article.on {
 }
 /* 박스 순서별로 배경색 지정 */
 
-/* article:nth-of-type(1) */
 section article.box1{
   background : gold;
 }
