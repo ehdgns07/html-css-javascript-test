@@ -27,8 +27,12 @@ function operator(opr){
     }
 
     if(opr === '='){
+        if(num1 === undefined){
+            console.log("순서가 틀렸습니다!");
+        }else{
        num2 = parseInt(numberForString);
        calculate(num2);
+    }
     }
 
     if(opr === 'C'){
@@ -41,8 +45,9 @@ function saveOperator(opr){
     oper = opr;
     result.value += oper;
     num1 = parseInt(numberForString);
-    }
     numberForString = '';
+    }
+    
 }
 
 function calculate(num2){
