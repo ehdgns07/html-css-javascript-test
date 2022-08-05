@@ -1,21 +1,13 @@
 const result = document.querySelector(".result");
-//  let number = '';
-//  let oper = '';
-//  let num1;
-//  let num2;
+ let number = '';
+ let oper = '';
+ let num1;
+ let num2;
  let flag = true;
-
- let numbers = {
-    number : '',
-    num1 : 0,
-    num2 : 0,
-    oper : '',
-    flag : true
- }
 
   function inputNum(num){
     if(flag){
-    numbers.number += num;
+    number += num;
     result.value += num;
     }else{
         emptyResult();
@@ -26,7 +18,7 @@ const result = document.querySelector(".result");
 
 function operator(opr){
   
-    if(nubmers.oper === ''){
+    if(oper === ''){
         saveOperator(opr);
     }
 
@@ -42,15 +34,15 @@ function operator(opr){
 function saveOperator(opr){
     oper = opr;
     result.value += oper;
-    numbers.num1 = parseInt(numbers.number);
-    numbers.number = '';
+    num1 = parseInt(number);
+    number = '';
 }
 
 function calculate(){
 
-    numbers.num2 = parseInt(numbers.number);
+    num2 = parseInt(number);
     if(oper === '/'){
-        result.value = numbers.num1 / numbers.num2;
+        result.value = num1 / num2;
         flag = false;
     }
     if(oper === '*'){
