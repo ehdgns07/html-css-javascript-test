@@ -1,5 +1,5 @@
 const result = document.querySelector(".result");
- let number = '';
+ let numberForString = '';
  let oper = '';
  let num1;
  let num2;
@@ -7,7 +7,7 @@ const result = document.querySelector(".result");
 
   function inputNum(num){
     if(flag){
-    number += num;
+    numberForString += num;
     result.value += num;
     }else{
         emptyResult();
@@ -19,21 +19,16 @@ const result = document.querySelector(".result");
 function operator(opr){
   
     if(oper === ''){
-        if(number === ''){
+        if(numberForString === ''){
             oper = '';
-            console.log("a");
         }else{
         saveOperator(opr);
     }
     }
 
     if(opr === '='){
-        num2 = parseInt(number);
-        if(num2 === undefined){
-            console.log('a')
-        }else{
+       num2 = parseInt(numberForString);
        calculate(num2);
-    }
     }
 
     if(opr === 'C'){
@@ -45,9 +40,9 @@ function saveOperator(opr){
     if(opr !== '='){
     oper = opr;
     result.value += oper;
-    num1 = parseInt(number);
-    number = '';
-}
+    num1 = parseInt(numberForString);
+    }
+    numberForString = '';
 }
 
 function calculate(num2){
@@ -68,11 +63,12 @@ function calculate(num2){
         result.value = num1 + num2;
         flag = false;
     }
+    
 }
 
 function emptyResult(){
     result.value = '';
-    number = '';
+    numberForString = '';
     num1 = '';
     num2 = '';
     oper = '';
